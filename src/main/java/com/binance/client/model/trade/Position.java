@@ -7,6 +7,16 @@ import java.math.BigDecimal;
 
 public class Position {
 
+    public String getPositionAmt() {
+        return positionAmt;
+    }
+
+    public void setPositionAmt(String positionAmt) {
+        this.positionAmt = positionAmt;
+    }
+
+    private String positionAmt;
+
     private Boolean isolated;
 
     private BigDecimal leverage;
