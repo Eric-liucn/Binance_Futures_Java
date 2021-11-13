@@ -1,11 +1,22 @@
 package com.binance.client.model.user;
 
 import com.binance.client.constant.BinanceApiConstants;
+import com.binance.client.model.enums.PositionSide;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
 import java.math.BigDecimal;
 
 public class OrderUpdate {
+
+    public PositionSide getPositionSide() {
+        return positionSide;
+    }
+
+    public void setPositionSide(PositionSide positionSide) {
+        this.positionSide = positionSide;
+    }
+
+    private PositionSide positionSide;
 
     private String symbol;
 

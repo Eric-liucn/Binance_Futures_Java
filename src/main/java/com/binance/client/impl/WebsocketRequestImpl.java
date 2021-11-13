@@ -11,6 +11,7 @@ import com.binance.client.SubscriptionErrorHandler;
 import com.binance.client.SubscriptionListener;
 import com.binance.client.impl.utils.Channels;
 import com.binance.client.model.enums.CandlestickInterval;
+import com.binance.client.model.enums.PositionSide;
 import com.binance.client.model.event.AggregateTradeEvent;
 import com.binance.client.model.event.CandlestickEvent;
 import com.binance.client.model.event.LiquidationOrderEvent;
@@ -518,6 +519,7 @@ class WebsocketRequestImpl {
                 orderUpdate.setIsMarkerSide(jsondata.getBoolean("m"));
                 orderUpdate.setIsReduceOnly(jsondata.getBoolean("R"));
                 orderUpdate.setWorkingType(jsondata.getString("wt"));
+                orderUpdate.setPositionSide(PositionSide.valueOf(jsondata.getString("ps")));
                 orderUpdate.setActivationPrice(jsondata.getBigDecimalOrDefault("AP", BigDecimal.ZERO));
                 orderUpdate.setCallbackRate(jsondata.getBigDecimalOrDefault("cr", BigDecimal.ZERO));
                 result.setOrderUpdate(orderUpdate); 
